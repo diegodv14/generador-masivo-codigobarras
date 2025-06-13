@@ -14,7 +14,7 @@ def generate_code_bar():
     codes = []
    
     for cat in categorias:
-        for i in range(100):
+        for i in range(200):
             code = f"{cat}-000{i + 1}"
             codes.append(code)
 
