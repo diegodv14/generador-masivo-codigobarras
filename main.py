@@ -8,14 +8,14 @@ from utils.match_excel import match_excel_existing
 
 os.makedirs("barcodes", exist_ok=True)
 
-categorias = ["MUE001", "ECT002", "BCT003"]
+categorias = [{"cat":"MUE001", "valor": 50}, {"cat": "ECT002", "valor": 150}, {"cat": "BCT003", "valor": 50}]
 
 def generate_code_bar():
     codes = []
    
-    for cat in categorias:
-        for i in range(200):
-            code = f"{cat}-000{i + 1}"
+    for item in categorias:
+        for i in range(item["valor"]):
+            code = f"{item["cat"]}-000{i + 1}"
             codes.append(code)
 
     for code in codes:
